@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tienda Online de Computo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Tienda Online de Computo</h1>
+        <form name="form1" action="/Laboratorio03/Servlet"
+              method="post" onsubmit= "return verificaRadios(this)" >
+            <label for="UnidadCental">Unidad Central:</label>
+            <select name="UnidadCentral" id="UnidadCentral">
+                <option value="AMD">AMD Ryzen 5 2da gen - 8GB RAM 1TB HDD || S/ 1699</option>
+                <option value="Intel7">Intel i7 7ma gen - 8GB RAM 1TB HDD || S/ 1500</option>
+                <option value="Intel9">Intel i9 9na gen - 16GB RAM 1TB HDD || S/ 2099</option>            
+            </select>        
+            <br><br>
+            <input type="checkbox" name="periferico" value="PeriN" /> Perifericos normales<br />
+            <div id="1">
+                <label for="DispositivoEntrada">Periferico de entrada:</label>
+                <select name="DispositivoEntrada0" id="DispositivoEntrada">
+                    <option value="teclado">Teclado Halion S/ 40</option>
+                    <option value="mouse">Mouse Halion S/ 30</option>
+                    <option value="tableta">Tableta gráfica Wacon S/ 250</option>
+                </select>
+
+                <input type="button" value = "+" onclick= "addfeilds1();"> 
+            </div>
+            <input type="hidden" name="incremento" id="2" value="0"/>
+            <script>
+                incremento = 0;
+                function addfeilds1()
+                {
+                    incremento++;
+                    var div = document.getElementById("1");
+                    var val = document.getElementById("2");
+                    val.setAttribute("value", incremento);
+                    var node = document.createElement("select");
+                    node.setAttribute("name", "DispositivoEntrada" + incremento);
+                    var option1 = document.createElement("option");
+                    var option2 = document.createElement("option");
+                    var option3 = document.createElement("option");
+                    option1.setAttribute("value", "teclado");
+                    option1.setAttribute("label", "Teclado Halion S/ 40");
+                    option2.setAttribute("value", "mouse");
+                    option2.setAttribute("label", "Mouse Halion S/ 30");
+                    option3.setAttribute("value", "tableta");
+                    option3.setAttribute("label", "Tableta gráfica Wacon S/ 250");
+                    node.appendChild(option1);
+                    node.appendChild(option2);
+                    node.appendChild(option3);
+                    var br = document.createElement("br");
+                    div.appendChild(br);
+                    div.appendChild(node);
+                }
+
+            </script>
+
+            <br><br>
+            <div id="3">
+                <label for="DispositivoSalida">Periferico de entrada:</label>
+                <select name="DispositivoSalida0" id="DispositivoSalida">
+                    <option value="monitor">Monitor LG S/ 100</option>
+                    <option value="impresoraI">Impresora Inyeccion tinta HP S/700</option>
+                    <option value="impresoraL">Impresora Laser Canon S/ 480</option>
+                </select>
+                <input type="button" value = "+" onclick= "addfeilds2();"> 
+            </div>
+            <input type="hidden" name="increment" id="4" value="0"/>
+            <script>
+                increment = 0;
+                function addfeilds2()
+                {
+                    increment++;
+                    var div = document.getElementById("3");
+                    var val = document.getElementById("4");
+                    val.setAttribute("value", increment);
+                    var node = document.createElement("select");
+                    node.setAttribute("name", "DispositivoSalida" + increment);
+                    var option1 = document.createElement("option");
+                    var option2 = document.createElement("option");
+                    var option3 = document.createElement("option");
+                    option1.setAttribute("value", "monitor");
+                    option1.setAttribute("label", "Monitor LG S/ 100");
+                    option2.setAttribute("value", "impresoraI");
+                    option2.setAttribute("label", "Impresora Inyeccion tinta HP S/700");
+                    option3.setAttribute("value", "impresoraL");
+                    option3.setAttribute("label", "Impresora Laser Canon S/ 480");
+                    node.appendChild(option1);
+                    node.appendChild(option2);
+                    node.appendChild(option3);
+                    var br = document.createElement("br");
+                    div.appendChild(br);
+                    div.appendChild(node);
+                }
+
+            </script>
+            <br><br>
+            <input type="checkbox" name="periferico1" value="PeriE" /> Periferico especial<br />
+            <div id="5">
+                <label for="DispositivoES">Periferico especial:</label>
+                <select name="DispositivoES0" id="DispositivoES">
+                    <option value="pantallaT">Pantalla Táctil Dell S/ 1345</option>            
+                </select>
+                <input type="button" value = "+" onclick= "addfeilds3();"> 
+            </div>
+            <input type="hidden" name="incremen" id="6" value="0"/>
+            <script>
+                increment = 0;
+                function addfeilds3()
+                {
+                    incremen++;
+                    var div = document.getElementById("3");
+                    var val = document.getElementById("4");
+                    val.setAttribute("value", incremen);
+                    var node = document.createElement("select");
+                    node.setAttribute("name", "DispositivoSalida" + incremen);
+                    var option1 = document.createElement("option");
+                    var option2 = document.createElement("option");
+                    var option3 = document.createElement("option");
+                    option1.setAttribute("value", "monitor");
+                    option1.setAttribute("label", "Monitor LG S/ 100");
+                    option2.setAttribute("value", "impresoraI");
+                    option2.setAttribute("label", "Impresora Inyeccion tinta HP S/700");
+                    option3.setAttribute("value", "impresoraL");
+                    option3.setAttribute("label", "Impresora Laser Canon S/ 480");
+                    node.appendChild(option1);
+                    node.appendChild(option2);
+                    node.appendChild(option3);
+                    var br = document.createElement("br");
+                    div.appendChild(br);
+                    div.appendChild(node);
+                }
+            </script>
+            <br><br>
+            <script type="text/javascript">
+                function verificaRadios(form) {
+                    marcado = false;
+
+                    if (form.periferico.checked) {
+                        marcado = true;
+                    }
+                    if (form.periferico1.checked) {
+                        marcado = true;
+                    }
+                    if (!marcado) {
+                        alert("Por favor, debe elegir una opción! (Perifericos normales y/o especiales)");
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            </script>
+            <input type="submit" value="Finalizar Compra" />
+        </form>
+    </body>
+</html>
